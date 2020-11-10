@@ -1,3 +1,13 @@
+/**
+ * Grant Goldsworth 1164709 
+ * CS4A 
+ * Last Modified 11:15 10 November 2020 
+ * Address Book OOP Project 
+ * ------------------------------------------------ 
+ * AddressBook Class - main demonstration method
+ */
+
+
 import java.util.ArrayList;
 
 public interface ICompanyDirectory {

@@ -25,14 +25,14 @@ public class Manager extends Contact {
      * @param email contact's email address
      * @param telephoneNumber contact's primary phone number
      * @param id contact's employee ID number, as a {@code String}
-     * @param hireDate {@code java.util.Date} object for when employee was hired
+     * @param date {@code java.util.Date} object for when employee was hired
      * @param directReports number of directly reporting workers for manager
      * @throws Exception if any {@code String} parameter is empty or {@code null} and if reports is less than 0.
      */
-    public Manager(String firstName, String lastName, String email, String telephoneNumber, String id, Date hireDate, int directReports) 
+    public Manager(String firstName, String lastName, String email, String telephoneNumber, String id, java.util.Date date, int directReports) 
     throws Exception 
     {
-        super(firstName, lastName, email, telephoneNumber, id, hireDate);
+        super(firstName, lastName, email, telephoneNumber, id, date);
         setDirectReports(directReports);
     }
 

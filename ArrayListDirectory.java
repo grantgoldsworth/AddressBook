@@ -1,3 +1,13 @@
+/**
+ * Grant Goldsworth 1164709 
+ * CS4A 
+ * Last Modified 11:15 10 November 2020 
+ * Address Book OOP Project 
+ * ------------------------------------------------ 
+ * ArrayListDirectory class
+ */
+
+
 import java.util.ArrayList;
 
 /**
@@ -123,6 +133,24 @@ public class ArrayListDirectory implements ICompanyDirectory, DirectoryDisplay {
         sb.append("-------");
 
         return sb.toString();
+    }
+
+    public String getWorkerDisplay() {
+            // use StringBuilder to be mroe efficient with appending
+            StringBuilder sb = new StringBuilder();
+            sb.append("DIRECTORY - WORKERS\n");
+            sb.append("--------");
+    
+            // add each contact's toString()
+            for (Contact c : workers) {
+    
+                sb.append(c.toString());
+                sb.append("\n\n");
+            }
+    
+            sb.append("-------");
+    
+            return sb.toString();
     }
     
 }
