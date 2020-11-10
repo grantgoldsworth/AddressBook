@@ -1,5 +1,14 @@
-import java.util.Date;
+/**
+ * Grant Goldsworth 1164709 
+ * CS4A 
+ * Last Modified 11:15 10 November 2020 
+ * Address Book OOP Project 
+ * ------------------------------------------------ 
+ * Worker class
+ */
 
+
+import java.util.Date;
 import utilities.DataValidation;
 
 /**
