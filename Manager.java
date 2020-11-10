@@ -7,7 +7,6 @@
  * Manager Class
  */
 
-import java.sql.Date;
 import java.util.*;
 
 /**
@@ -29,7 +28,7 @@ public class Manager extends Contact {
      * @param directReports number of directly reporting workers for manager
      * @throws Exception if any {@code String} parameter is empty or {@code null} and if reports is less than 0.
      */
-    public Manager(String firstName, String lastName, String email, String telephoneNumber, String id, java.util.Date date, int directReports) 
+    public Manager(String firstName, String lastName, String email, String telephoneNumber, String id, java.util.Calendar date, int directReports) 
     throws Exception 
     {
         super(firstName, lastName, email, telephoneNumber, id, date);
@@ -86,7 +85,7 @@ public class Manager extends Contact {
      */
     @Override
     public String toString() {
-        return String.format("{0}, direct reports: {1}", super.toString(), getDirectReports());
+        return String.format("%s, direct reports: %s", super.toString(), getDirectReports());
     }
 
 

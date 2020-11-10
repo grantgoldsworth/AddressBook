@@ -121,7 +121,7 @@ public class ArrayListDirectory implements ICompanyDirectory, DirectoryDisplay {
         // use StringBuilder to be mroe efficient with appending
         StringBuilder sb = new StringBuilder();
         sb.append("DIRECTORY\n");
-        sb.append("--------");
+        sb.append("--------\n");
 
         // add each contact's toString()
         for (Contact c : allContacts) {
@@ -135,11 +135,15 @@ public class ArrayListDirectory implements ICompanyDirectory, DirectoryDisplay {
         return sb.toString();
     }
 
+    /**
+     * Return a String that represents a list of all workers in the directory
+     * @return a string with information from all workers in list
+     */
     public String getWorkerDisplay() {
             // use StringBuilder to be mroe efficient with appending
             StringBuilder sb = new StringBuilder();
             sb.append("DIRECTORY - WORKERS\n");
-            sb.append("--------");
+            sb.append("--------\n");
     
             // add each contact's toString()
             for (Contact c : workers) {
@@ -151,6 +155,50 @@ public class ArrayListDirectory implements ICompanyDirectory, DirectoryDisplay {
             sb.append("-------");
     
             return sb.toString();
+    }
+
+    /**
+     * Return a String that represents a list of all managers in the directory
+     * @return a string with information from all managers in list
+     */
+    public String getManagerDisplay() {
+        // use StringBuilder to be mroe efficient with appending
+        StringBuilder sb = new StringBuilder();
+        sb.append("DIRECTORY - MANAGERS\n");
+        sb.append("--------\n");
+
+        // add each contact's toString()
+        for (Contact c : managers) {
+
+            sb.append(c.toString());
+            sb.append("\n\n");
+        }
+
+        sb.append("-------");
+
+        return sb.toString();
+    }
+
+    /**
+     * Return a String that represents a list of all executives in the directory
+     * @return a string with information from all executives in list
+     */
+    public String getExecutiveDisplay() {
+        // use StringBuilder to be mroe efficient with appending
+        StringBuilder sb = new StringBuilder();
+        sb.append("DIRECTORY - EXECUTIVES\n");
+        sb.append("--------\n");
+
+        // add each contact's toString()
+        for (Contact c : executives) {
+
+            sb.append(c.toString());
+            sb.append("\n\n");
+        }
+
+        sb.append("-------");
+
+        return sb.toString();
     }
     
 }

@@ -25,7 +25,7 @@ public class Executive extends Contact {
      * @param indirectReports number of indirectly reporting people
      * @throws Exception if any {@code String} parameter is empty or {@code null}, and if any report is negative.
      */
-    public Executive(String firstName, String lastName, String email, String telephoneNumber, String id, Date hireDate, int directReports, int indirectReports) 
+    public Executive(String firstName, String lastName, String email, String telephoneNumber, String id, Calendar hireDate, int directReports, int indirectReports) 
         throws Exception {
         super(firstName, lastName, email, telephoneNumber, id, hireDate);
         setDirectReports(directReports);

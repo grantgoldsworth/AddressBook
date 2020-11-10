@@ -16,8 +16,9 @@ public class AddressBook {
     public static void main(String[] args) throws Exception {
         // create new directory
         ArrayListDirectory directory = new ArrayListDirectory();
-        Date hire1 = new Date();
-        Contact manager1 = new Manager("Joe", "Manager", "joe@company.com", "9490000000", "1237653", hire1, 3);
+
+        Contact manager1 = new Manager("Joe", "Manager", "joe@company.com", "9490000000", "1237653", new GregorianCalendar(), 3);
+
         directory.addContact(manager1);
 
         System.out.print(directory.getDisplay());

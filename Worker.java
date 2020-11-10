@@ -8,7 +8,6 @@
  */
 
 
-import java.util.Date;
 import utilities.DataValidation;
 
 /**
@@ -30,7 +29,7 @@ public class Worker extends Contact {
      * @param department the worker's department
      * @throws Exception if any {@code String} parameter is empty
      */
-    public Worker(String firstName, String lastName, String email, String telephoneNumber, String id, Date hireDate, String department) 
+    public Worker(String firstName, String lastName, String email, String telephoneNumber, String id, java.util.Calendar hireDate, String department) 
         throws Exception
     {
         super(firstName, lastName, email, telephoneNumber, id, hireDate);
