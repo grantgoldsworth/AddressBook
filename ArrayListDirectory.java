@@ -9,6 +9,7 @@
 
 
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  * Implements a Company directory using ArrayLists to manage {@code Contacts}.
@@ -19,17 +20,67 @@ public class ArrayListDirectory implements ICompanyDirectory, DirectoryDisplay {
     private ArrayList<Contact> workers;
     private ArrayList<Contact> managers;
     private ArrayList<Contact> executives;
+    File dataFile;
 
     /**
-     * Default no arg constructor. Creates an empty list
+     * Default constructor. Creates an empty list
      * of all contacts, and empty lists for the workers, managers, and
      * executives in the list.
      */
-    public ArrayListDirectory() {
+    public ArrayListDirectory(File file) {
         allContacts = new ArrayList<>();
         workers     = new ArrayList<>();
         managers    = new ArrayList<>();
         executives  = new ArrayList<>();
+        dataFile = file;
+    }
+
+    public void writeToFile() throws Exception {
+        // write contacts to file
+        try 
+        (
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(dataFile));
+        )
+        {
+            output.writeObject(allContacts);
+        }
+    }
+
+
+    public void readFromFile(boolean overwrite) throws Exception {
+        // read contacts from a file 
+        try (
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream(dataFile));
+        )
+        {
+
+            Object readObj = input.readObject();
+
+            if (readObj instanceof ArrayList<?>) {
+                ArrayList<Contact> readList = (ArrayList<Contact>) readObj;
+                if(overwrite) {
+                    allContacts = readList;
+                }
+                else {
+                    for (int i = 0; i < readList.size(); i++) {
+                        try 
+                        {
+                            addContact(readList.get(i));
+                        }
+                        catch (Exception ex)
+                        {
+                            // pass
+                        }
+                    }
+                }
+            }
+            else {
+                throw new Exception(String.format("Data read from file '%s' is not compatible!", dataFile.getName()));
+            }
+
+
+        }
+
     }
 
     /**

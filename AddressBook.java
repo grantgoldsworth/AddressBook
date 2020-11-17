@@ -1,3 +1,4 @@
+
 /**
  * Grant Goldsworth 1164709 
  * CS4A 
@@ -7,6 +8,7 @@
  * AddressBook Class - main demonstration method
  */
 
+import java.io.File;
 import java.util.*;
 
 /**
@@ -14,13 +16,17 @@ import java.util.*;
  */
 public class AddressBook {
     public static void main(String[] args) throws Exception {
+        File dataFile = new File("data.dat");
         // create new directory
-        ArrayListDirectory directory = new ArrayListDirectory();
+        ArrayListDirectory directory = new ArrayListDirectory(dataFile);
 
         Contact manager1 = new Manager("Joe", "Manager", "joe@company.com", "9490000000", "1237653", new GregorianCalendar(), 3);
 
         directory.addContact(manager1);
+        directory.writeToFile();
 
-        System.out.print(directory.getDisplay());
+        ArrayListDirectory directory2 = new ArrayListDirectory(dataFile);
+        directory2.readFromFile(true);
+        System.out.print(directory2.getDisplay());
     }    
 }

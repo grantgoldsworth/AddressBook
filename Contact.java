@@ -9,6 +9,7 @@
 
 
 import java.util.*;
+import java.io.Serializable;
 import utilities.DataValidation;
 
 /**
@@ -18,7 +19,7 @@ import utilities.DataValidation;
  * <p> {@code Contact} objects are comparable on terms of {@code id} ({@code 0} if identical), or by full name. 
  * <p> {@code Contact} objects are cloneable.
  */
-public abstract class Contact implements Comparable<Contact>, Cloneable {
+public abstract class Contact implements Comparable<Contact>, Cloneable, Serializable {
     private String firstName;
     private String lastName;
     private String email;
